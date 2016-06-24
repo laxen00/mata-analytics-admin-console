@@ -136,7 +136,7 @@
 					<li class="active">Field Map</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Field Map</h1>
                 </div>

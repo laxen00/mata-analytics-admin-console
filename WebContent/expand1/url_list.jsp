@@ -81,7 +81,7 @@
 					<li class="active">URL List</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">URL List</h1>
 					<span></span>

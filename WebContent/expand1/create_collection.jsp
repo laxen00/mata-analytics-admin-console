@@ -59,7 +59,7 @@
 			  		<li class="active">Create Collection</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Create Collection</h1>
 					<span>A collection contains the content that you want to query. After you click OK, you return to the Collections view.</span>

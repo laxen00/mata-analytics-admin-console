@@ -233,7 +233,7 @@
 					<li class="active">Create Rules</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Rules to Crawl Domains</h1>
 					<span>Specify regex pattern that you want to allow or forbid the crawler to crawl.</span>

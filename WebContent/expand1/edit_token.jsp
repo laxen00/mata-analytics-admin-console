@@ -151,7 +151,7 @@
 					<li class="active">Edit Token - <% out.print(alias); %></li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Edit Token</h1>
 					<span>Token details can be edited to be used for Facebook and Twitter crawling purpose.</span>

@@ -283,7 +283,7 @@ String[][] apptokens = new SecurityRequest(hostname).getTokens(session.getAttrib
 					<li class="active">Edit Crawler - <% out.print(displayname + " (" + crawlerId + ")"); %></li>
 				</ul>
 			</div>
-            <div class="row" style="margin-top:-45px">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Edit crawler</h1>
 					<span>Edit the existing crawler properties.</span>

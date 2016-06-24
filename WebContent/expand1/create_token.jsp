@@ -117,7 +117,7 @@
 					<li class="active">Create Token</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Create Token</h1>
 					<span>New Token can be added to be used for Facebook and Twitter crawling purpose.</span>

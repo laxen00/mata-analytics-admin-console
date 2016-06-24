@@ -77,7 +77,7 @@
 					<li class="active">Index Fields</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">Index Fields</h1>
                 </div>

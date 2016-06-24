@@ -48,7 +48,7 @@
 				<li class="active">Security</li>
 			</ul>
 		</div>
-		<div class="row_ed">
+		<div class="row_ed maxhead">
 			<div class="col-lg-12">
 				<h1 class="page-header">Security Fields</h1>
 			</div>

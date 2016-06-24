@@ -136,7 +136,7 @@
 					<li class="active">Annotator</li>
 				</ul>
 			</div>
-            <div class="row">
+            <div class="row maxhead">
                 <div class="col-lg-12">
                     <h1 class="page-header">PEAR Upload</h1>
 					<span>Upload your PEAR here</span>
