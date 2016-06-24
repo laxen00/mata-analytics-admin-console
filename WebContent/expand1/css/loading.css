@@ -1,0 +1,87 @@
+*, *::before, *::after {
+  box-sizing:border-box;
+}
+
+body {
+  background:#333;
+}
+.icon {
+  width:60px;
+  height:60px;
+  background:#ff9934;
+  border-radius:50%;
+  overflow:hidden;
+  position:absolute;
+  margin:auto;
+  top:0; right:0; bottom:0; left:0;
+  background: #232b2f linear-gradient(top, #99c348, #6d9a1a 100%);
+  animation: icon 1s infinite;
+}
+
+
+.icon .hexagon {
+  width:32px;
+  height:20px;
+  background:#333;
+  position:absolute;
+  left:50%; margin-left:-16px;
+  top:50%; margin-top:-10px;
+}
+
+.icon .hexagon::before {
+  content:'';
+  position:absolute;
+  width:0; height:0;
+  border-bottom:8px solid #333;
+  border-left:16px solid transparent;
+  border-right:16px solid transparent;
+  top:-8px;
+}
+
+.icon .hexagon::after {
+  content:'';
+  position:absolute;
+  width:0; height:0;
+  border-top:8px solid #333;
+  border-left:16px solid transparent;
+  border-right:16px solid transparent;
+  bottom:-8px;
+}
+
+.icon .lines {
+  position:absolute;
+  width: 40px;
+  height:50px;
+  background:transparent;
+  border-top:4px solid #333;
+  border-radius:12px;
+  
+}
+
+.icon .lines:nth-child(2) {
+  transform:rotate(30deg);
+  left:-4px;
+  top:7px;
+}
+
+.icon .lines:nth-child(3) {
+  transform:rotate(150deg);
+  left:14px;
+  top:-7px;
+}
+
+.icon .lines:nth-child(4) {
+  transform:rotate(270deg);
+  left:19px;
+  top:15px;
+}
+
+@keyframes icon {
+  to { transform:rotate(360deg); }
+}
+
+.layer {
+	width:100%;
+	height:100%;
+	background : rgba(255,0,0,0.2);
+}

@@ -1,0 +1,39 @@
+.container_ex {
+    
+    border:1px solid #d3d3d3;
+	border-top: 2px solid #3D7BD6;
+	border-radius: 4px;
+	margin: 10px;
+	padding:2px;
+	
+}
+.container_ex1 {
+    
+    border:1px solid #d3d3d3;
+	border-top: 2px solid #3D7BD6;
+	border-radius: 4px;
+	margin: 2px 10px 2px 10px;
+	padding:2px;
+	
+}
+.container_ex  {
+    /*width:100%;*/
+}
+.container_ex .header {
+    background-color:#d3d3d3;
+    padding: 2px 0px 2px 0px;
+    cursor: pointer;
+    font-weight: bold;
+	
+}
+.container_ex .content {
+    display: none;
+    padding : 5px;
+}
+.crawllimit {
+	position:fixed;
+	top:0;
+	background:#FF0000;
+	z-index:100;
+	width:100%;
+}
