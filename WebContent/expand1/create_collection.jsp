@@ -77,7 +77,7 @@
                                 <input name ='colId' id='colId' type="text" class="form-control" placeholder="Collection Name" required pattern="[A-Za-z0-9]*">
                             </div>
 							<div class="form-group">
-                                <span>* </span><label>Description</label>
+                                <label>Description</label>
                                 <textarea name='colDesc' id='colDesc' type="text" class="form-control" placeholder="write the description here..." ></textarea>
                             </div>
 							
