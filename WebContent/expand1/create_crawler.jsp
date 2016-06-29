@@ -396,7 +396,7 @@
 								
 							</div>
 							<%
-								String progdisplay = "";
+								String progdisplay = "none";
 								if (prog.equalsIgnoreCase("false")) progdisplay = "inline";
 								else progdisplay = "none";
 							%>

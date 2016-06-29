@@ -93,7 +93,7 @@ public class ParseRequest {
 		String[] result = null;
 		try {
 			String url = PROTOCOL+hostname+ PORT + "/api/admin/parsingindex?method=reloadParsing&collectionId="+colId+"&sessionId="+token;
-			// System.out.println(url);
+			 System.out.println(url);
 			String data = HttpProcess.getData(url);
 //			// System.out.println("reload response: " + data);
 			InputSource is = new InputSource(new StringReader(data));

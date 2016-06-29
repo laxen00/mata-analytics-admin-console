@@ -11,13 +11,13 @@ public class Main {
 		
 		String hostname = "max.mataprima.com";
 		String token = TesterLogin.login(hostname);
-		String colId = "apalah";
+		String colId = "ivantestcollection";
 		String username = "administrator";
 		String crawlerId = "WEB_78623";
 //		String[] a = new CrawlerRequest(hostname).getListTemplate("forum", token);
-		String[] a = new CrawlerRequest(hostname).getCrawler(colId, crawlerId, token);
+//		String[] a = new CrawlerRequest(hostname).getCrawler(colId, crawlerId, token);
 //		String bodeh = "{\"collectionId\":\"apalah\"}";
-//		String[] a = new CollectionRequest(hostname).createV2Collection(bodeh, token);
+		String[] a = new ParseRequest(hostname).reloadParse(colId, token);
 //		String[] a = new CrawlerRequest(hostname).getTemplate("kaskus.co.id", token);
 		int counter = 0;
 		for (String line : a) {
