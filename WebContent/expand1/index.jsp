@@ -116,7 +116,7 @@
 				%>
 				<div id="<% out.print(colId); %>" class="container_ex">
 					<div class="panel-heading" style="background-color:#e6e6e6;" >
-						<table style="width:100%">
+						<table style="width:100%">1234
 							<tr>
 								<td style="width:99%">
 									<div style="cursor:pointer" class="panel_ed-heading" onclick="colexpand(<% out.print("'"+colId+"'"); %>)">
