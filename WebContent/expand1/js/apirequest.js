@@ -10,7 +10,8 @@ function startCrawler(col, con, colId, crawlerId) {
 		  		run_progress_crawler(col,con,'running',colId,crawlerId);
 			};
 		  	document.getElementById('deletebutton'+col+'_'+con).className = "btn disabled";
-			document.getElementById('buttonrun'+col+'_'+con).src = "images/stop.png";
+			document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-stop";
+			document.getElementById('buttonrun'+col+'_'+con).style.color = "red";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 
 				'progress no-margin progress-striped active';
@@ -33,7 +34,8 @@ function stopCrawler(col, con, colId, crawlerId) {
 				run_progress_crawler(col,con,'not running',colId,crawlerId);
 			};
 			document.getElementById('deletebutton'+col+'_'+con).className = "btn";
-			document.getElementById('buttonrun'+col+'_'+con).src = "images/run.png";
+			document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-play";
+			document.getElementById('buttonrun'+col+'_'+con).style.color = "green";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "not running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 
 				'progress no-margin';
@@ -75,10 +77,12 @@ function getOverallState(col, colId) {
 	    {
 		  var state = parseInt(xmlhttp.responseText);
 		  if (state == 1) {
-			  document.getElementById("crawl_indicator"+col).src = "images/active1.png";
+			  document.getElementById("crawl_indicator"+col).className = "fa fa-circle";
+			  document.getElementById("crawl_indicator"+col).style.color = "green";
 		  }
 		  else {
-			  document.getElementById("crawl_indicator"+col).src = "images/noactive1.png";
+			  document.getElementById("crawl_indicator"+col).className = "fa fa-circle-o";
+			  document.getElementById("crawl_indicator"+col).style.color = "black";
 		  }
 	    }
 	  };
@@ -107,10 +111,12 @@ function startCollection(col, con, colId, unused) {
 	    {
 			var progressBar = $('#progress-bar-ed'+col+'_'+con);
 			progressBar.css('width',  '100%');
-			document.getElementById('buttonrun'+col+'_'+con).src = "images/stop.png";
+			document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-stop";
+			document.getElementById('buttonrun'+col+'_'+con).style.color = "red";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 'progress no-margin progress-striped active';
-			document.getElementById('index_indicator'+col).src = "images/active1.png";
+			document.getElementById('index_indicator'+col).className = "fa fa-circle";
+			document.getElementById('index_indicator'+col).style.color = "green";
 			document.getElementById("button"+col+"_"+con).onclick = function() {
 				run_progress_collection(col,con,'running',colId, unused);
 			};
@@ -134,10 +140,12 @@ function stopCollection(col, con, colId, unused) {
 			document.getElementById("button"+col+"_"+con).onclick = function() {
 				run_progress_collection(col,con,'not running',colId, unused);
 			};
-			document.getElementById('buttonrun'+col+'_'+con).src = "images/run.png";
+			document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-play";
+			document.getElementById('buttonrun'+col+'_'+con).style.color = "green";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "not running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 'progress no-margin';
-			document.getElementById('index_indicator'+col).src = "images/noactive1.png";
+			document.getElementById('index_indicator'+col).className = "fa fa-circle-o";
+			document.getElementById('index_indicator'+col).style.color = "black";
 			document.getElementById('colSize'+col).src = "";
 			document.getElementById('numdocs'+col).src = "";
 			document.getElementById('colVersion'+col).src = "";
@@ -178,7 +186,8 @@ function reloadParse(col, con, colId, unused) {
 			document.getElementById("button"+col+"_"+con).onclick = function() {
 				run_progress_reloader(col,con,'not running',colId, unused);
 			};
-			document.getElementById('buttonrun'+col+'_'+con).src = "images/run.png";
+			document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-play";
+			document.getElementById('buttonrun'+col+'_'+con).style.color = "green";
 			document.getElementById('button'+col+'_'+con).classname = "btn btn-default";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "not running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 

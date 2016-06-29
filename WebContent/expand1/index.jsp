@@ -104,12 +104,14 @@
 						String colSize = "";
 						String numDocs = "";
 						String colVersion = "";
-						String colActiveImg = "images/noactive1.png";
+						String colActiveImg = "fa fa-circle-o";
+						String colActiveImgColor = "color:black";
 						if (collection.length > 1) {
 							colSize = collection[1];
 							numDocs = collection[2];
 							colVersion = collection[3];
-							colActiveImg = "images/active1.png";
+							colActiveImg = "fa fa-circle";
+							colActiveImgColor = "color:green";
 						}
 				%>
 				<div id="<% out.print(colId); %>" class="container_ex">
@@ -138,11 +140,11 @@
 												}
 											}
 										%>
-										<img id="index_indicator<%out.print(colCount); %>" src="<% out.print(colActiveImg); %>" title="Parse and Index" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px;">
+										<i id="index_indicator<%out.print(colCount); %>" class="<% out.print(colActiveImg); %>" title="Parse and Index" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px; <% out.print(colActiveImgColor); %>"></i>
 						
-										<% if (crawlerOverallState.equals("running")) { %><img id="crawl_indicator<% out.print(colCount); %>" src="images/active1.png" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px;"> <% } %>
-										<% if (crawlerOverallState.equals("not running")) { %><img id="crawl_indicator<% out.print(colCount); %>" src="images/noactive1.png" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px;"> <% } %>
-										<% if (crawlerOverallState.equals("")) { %><img id="crawl_indicator<% out.print(colCount); %>" src="images/noactive1.png" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px;"> <% } %>
+										<% if (crawlerOverallState.equals("running")) { %><i id="crawl_indicator<% out.print(colCount); %>" class="fa fa-circle" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px; color:green"></i> <% } %>
+										<% if (crawlerOverallState.equals("not running")) { %><i id="crawl_indicator<% out.print(colCount); %>" class="fa fa-circle-o" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px; color:black"></i> <% } %>
+										<% if (crawlerOverallState.equals("")) { %><i id="crawl_indicator<% out.print(colCount); %>" class="fa fa-circle-o" title="Crawl" style="display:block; float:right; z-index:1080; height:12px; width:12px; margin: 5px 15px 0px 15px; color:black"></i> <% } %>
 									</div>
 								</td>
 								<td>
@@ -209,7 +211,7 @@
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
-													<td colspan="3"><samp>Crawl</samp></td>
+													<td colspan="3"><span>Crawl</span></td>
 												</tr>
 		<!-- 										<tr> -->
 		<!-- 										<td style="width:70%"> -->
@@ -236,7 +238,7 @@
 															<td style="width:99%">
 																<div style="cursor:pointer" class="subpanel_ed-heading_ed" onclick="subcolexpand(<% out.print("'"+colId+"'"); %>, '1')">
 																	<b>
-																		<samp12>Crawler</samp12>
+																		<span style="font-size:12px">Crawler</span>
 																	</b>
 																</div>
 															</td>
@@ -282,7 +284,7 @@
 																<td colspan="4">
 <%-- 																	<img src="<%out.print(icon);%>" width="15px" height="15px" style="margin-right:5px"/> --%>
 																		<i class="<%out.print(icon);%>"></i>
-																		<samp12><% out.println(displayname); %></samp12>
+																		<span style="font-size:12px"><% out.println(displayname); %></span>
 																</td>
 																<%
 																	String state = new CrawlerRequest(hostname).getState(colId, crawlerId, token)[0];
@@ -311,26 +313,31 @@
 																<td style="width:5%">
 																	<%
 																		String imgsrc = "";
+																		String stylecolor = "";
 																		String stateText = "";
 																		if (state.equals("not running")) {
-																			imgsrc = "images/run.png";
+																			imgsrc = "fa fa-play";
+																			stylecolor = "color:green";
 																			stateText = "not running";
 																		}
 																		if (state.equals("running")) {
-																			imgsrc = "images/stop.png";
+																			imgsrc = "fa fa-stop";
+																			stylecolor = "color:red";
 																			stateText = "running";
 																		}
 																		if (state.equals("starting")) {
-																			imgsrc = "images/run.png";
+																			imgsrc = "fa fa-play";
+																			stylecolor = "color:green";
 																			stateText = "starting";
 																		}
 																		if (state.equals("stopping")) {
-																			imgsrc = "images/stop.png";
+																			imgsrc = "fa fa-stop";
+																			stylecolor = "color:red";
 																			stateText = "stopping";
 																		}
 																	%>
 																	<button type="button" id="<% out.print("button"+colCount+"_"+crawlCount); %>" class="btn btn-default" onclick="run_progress_crawler(<% out.print("\'"+colCount+"\'"); %>,<% out.print("\'"+crawlCount+"\'"); %>,<% out.print("\'"+state+"\'"); %>,<% out.print("\'"+colId+"\'"); %>,<% out.print("\'"+crawlerId+"\'"); %>)">
-																		<img id="<% out.print("buttonrun"+colCount+"_"+crawlCount); %>" src="<%out.print(imgsrc); %>" width="10px" height="10px" />
+																		<i id="<% out.print("buttonrun"+colCount+"_"+crawlCount); %>" class="<%out.print(imgsrc); %>" style="<%out.print(stylecolor); %>"></i>
 																	</button>				
 																</td>
 																<td style="width:15%">
@@ -343,15 +350,15 @@
 															</tr> -->
 															<tr>
 																<td>
-																	<samp id="recentlyCrawledStatus<% out.print(colCount + "_" + crawlCount); %>"></samp>
+																	<span id="recentlyCrawledStatus<% out.print(colCount + "_" + crawlCount); %>"></span>
 																</td>
 															</tr>
 															<tr>
 																<td colspan="4">
-																	<% if (state.equals("not running")) { %> <button id="deletebutton<% out.print(colCount); %>_<% out.print(crawlCount); %>" type="button" class="btn" style="float:right" data-toggle="modal" data-target="#delconf<%out.print(colCount); %>_<%out.print(crawlCount); %>" data-placement="bottom" title="" data-original-title="Stop the crawler first to delete"><img src="images/delete.png" width="16px" height="18px"/></button> <% } %>
-																	<% if (state.equals("running") || (state.equals("starting")) || (state.equals("stopping"))) { %> <button id="deletebutton<% out.print(colCount); %>_<% out.print(crawlCount); %>" type="button" class="btn disabled" style="float:right" data-toggle="modal" data-target="#delconf<%out.print(colCount); %>_<%out.print(crawlCount); %>"><img src="images/delete.png" width="16px" height="18px"/></button> <% } %>
-																	<button type="button" class="btn" style="float:right" onclick="location.href='url_list.jsp?colId=<% out.print(colId); %>&crawlerId=<% out.print(crawlerId); %>'"><img src="images/eye.png" width="18px" height="18px"/></button>
-																	<button type="button" class="btn" style="float:right" onclick="location.href='edit_crawler.jsp?colId=<% out.print(colId); %>&crawlerId=<% out.print(crawlerId); %>'"><img src="images/pencil.png" width="16px" height="18px"/></button>
+																	<% if (state.equals("not running")) { %> <button id="deletebutton<% out.print(colCount); %>_<% out.print(crawlCount); %>" type="button" class="btn" style="float:right" data-toggle="modal" data-target="#delconf<%out.print(colCount); %>_<%out.print(crawlCount); %>" data-placement="bottom" title="" data-original-title="Stop the crawler first to delete"><i class="fa fa-trash-o"></i></button> <% } %>
+																	<% if (state.equals("running") || (state.equals("starting")) || (state.equals("stopping"))) { %> <button id="deletebutton<% out.print(colCount); %>_<% out.print(crawlCount); %>" type="button" class="btn disabled" style="float:right" data-toggle="modal" data-target="#delconf<%out.print(colCount); %>_<%out.print(crawlCount); %>"><i class="fa fa-trash-o"></i></button> <% } %>
+																	<button type="button" class="btn" style="float:right" onclick="location.href='url_list.jsp?colId=<% out.print(colId); %>&crawlerId=<% out.print(crawlerId); %>'"><i class="fa fa-eye" ></i></button>
+																	<button type="button" class="btn" style="float:right" onclick="location.href='edit_crawler.jsp?colId=<% out.print(colId); %>&crawlerId=<% out.print(crawlerId); %>'"><i class="fa fa-pencil" ></i></button>
 																</td>
 															</tr>
 														</table>
@@ -404,26 +411,29 @@
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
-													<td colspan="3"><samp>Parse and Index</samp></td>
+													<td colspan="3"><span>Parse and Index</span></td>
 												</tr>
 												<tr>
 													<%
 														String classname = "";
 														String 	width = "";
 														String img = "";
+														String colors = "";
 														String textrun = "";
 														String state = "";
 														if (collection.length > 1) {
 															classname = "progress no-margin progress-striped active";
 															width = "100%";
-															img = "images/stop.png";
+															img = "fa fa-stop";
+															colors = "color:red";
 															textrun = "running";
 															state = "running";
 														}
 														else {
 															classname = "progress no-margin";
 															width = "0%";
-															img = "images/run.png";
+															img = "fa fa-play";
+															colors = "color:green";
 															textrun = "not running";
 															state = "not running";
 														}
@@ -436,21 +446,21 @@
 														</div>
 													</td>
 													<td style="width:10%">
-														<button id="<% out.print("button"+colCount+"_2"); %>" type="button" class="btn btn-default" onclick="run_progress_collection(<% out.print(colCount); %>,2,'<% out.print(state); %>','<% out.print(colId); %>','na')"><img id="<% out.print("buttonrun"+colCount+"_2"); %>" src="<%out.print(img); %>" width="15px" height="15px" /></button>
+														<button id="<% out.print("button"+colCount+"_2"); %>" type="button" class="btn btn-default" onclick="run_progress_collection(<% out.print(colCount); %>,2,'<% out.print(state); %>','<% out.print(colId); %>','na')"><i id="<% out.print("buttonrun"+colCount+"_2"); %>" class="<%out.print(img); %>" style="<%out.print(colors); %>" ></i></button>
 													</td>
 													<td style="width:20%">
 														<dfn id="<% out.print("textrun"+colCount+"_2"); %>"><%out.print(textrun); %></dfn>
 													</td>
 												</tr>
 												<tr>
-													<td><samp id="collectionStatus<% out.print(colCount); %>"></samp></td>
+													<td><span id="collectionStatus<% out.print(colCount); %>"></span></td>
 												</tr>
 											</table>
 											<hr>
 											<div class="panel-body_ed5">
 												<div class="dropdown navbar-right" style="display:block" >
-													<a class="dropdown-toggle" data-toggle="dropdown" href="#" >
-														<img src="images/pencil.png" width="16px" height="18px"  />
+													<a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:black">
+														<i class="fa fa-pencil" width="16px" height="18px"></i>
 													</a>
 													<ul class="dropdown-menu dropdown-tasks">
 														<li>
@@ -489,7 +499,7 @@
 											<div class="container_ex1">
 												<div class="subpanel-heading_ed" style="background-color:#e6e6e6;" >
 													<table style="width:100%">
-														<tr><td><div style="cursor:pointer" class="subpanel_ed-heading_ed" onclick="subcolexpand(<%out.print("'"+colId+"'");%>, '2')"><b><samp12>Analytic Resources</samp12></b></div>
+														<tr><td><div style="cursor:pointer" class="subpanel_ed-heading_ed" onclick="subcolexpand(<%out.print("'"+colId+"'");%>, '2')"><b><span style="font-size:12px">Analytic Resources</span></b></div>
 														</td></tr>
 														
 													</table>
@@ -501,14 +511,16 @@
 															if (rebuildStatus[0].equalsIgnoreCase("idle")) {
 																classname = "progress no-margin";
 																width = "0%";
-																img = "images/run.png";
+																img = "fa fa-play";
+																colors = "color:green";
 																textrun = "not running";
 																state = "not running";
 															}
 															else if(rebuildStatus[0].equalsIgnoreCase("rebuildindex")){
 																classname = "progress no-margin progress-striped active";
 																width = "20%";
-																img = "images/stop.png";
+																img = "fa fa-stop";
+																colors = "color:red";
 																textrun = "rebuilding";
 																state = "running";
 															}
@@ -516,7 +528,7 @@
 														
 														<table >
 															<tr>
-																<td colspan="4"><samp12b>Rebuild Index</samp12b></td>
+																<td colspan="4"><span style="font-size:12px; font-weight:bold">Rebuild Index</span></td>
 															</tr>
 															<tr>
 																<td style="width:70%">
@@ -528,7 +540,7 @@
 																</td>
 																<td style="width:5%">
 																	<button id="<% out.print("button"+colCount+"_3"); %>" type="button" class="btn btn-default" onclick="run_progress_rebuilder(<% out.print(colCount); %>,3,'<%out.print(state); %>','<% out.print(colId); %>','<%out.print(crawlerList.length);%>')">
-																		<img id="buttonrun<% out.print(colCount); %>_3" src="<%out.print(img);%>" width="10px" height="10px" />
+																		<i id="buttonrun<% out.print(colCount); %>_3" class="<%out.print(img);%>" style="<%out.print(colors);%>"></i>
 																	</button>
 																</td>
 																<td style="width:15%">
@@ -548,7 +560,7 @@
 														<hr>
 														<table style="margin-bottom:10px">
 															<tr>
-																<td colspan="4"><samp12>Deploy analytic resources</samp12></td>
+																<td colspan="4"><span style="font-size:12px">Deploy analytic resources</span></td>
 															</tr>
 															<tr>
 															<td style="width:70%">
@@ -559,7 +571,7 @@
 																</div>
 															</td>
 															<td style="width:5%">
-																<button id="<% out.print("button"+colCount+"_4"); %>" title="" type="button" class="btn btn-default" onclick="reloadParse(<% out.print(colCount); %>,4,'<% out.print(colId); %>','na')"><img id="buttonrun<% out.print(colCount); %>_4" src="images/run.png" width="10px" height="10px" /></button>
+																<button id="<% out.print("button"+colCount+"_4"); %>" title="" type="button" class="btn btn-default" onclick="reloadParse(<% out.print(colCount); %>,4,'<% out.print(colId); %>','na')"><i id="buttonrun<% out.print(colCount); %>_4" class="fa fa-play" style="color:green" width="10px" height="10px"></i></button>
 															</td>
 															<td style="width:15%">
 																<dfn12 id="<%out.print("textrun"+colCount+"_4");%>">not running</dfn12>
@@ -596,19 +608,19 @@
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
-													<td colspan="3"><samp>Details</samp></td>
+													<td colspan="3"><span>Details</span></td>
 												</tr>
 											</table>
 											<hr>
 											<table>
 															<tr>
-																<td style="width:50%"><samp12>Index size:</samp12></td>
-																<td style="width:25%"><samp12 id="colSize<%out.print(colCount);%>"><% out.print(colSize); %></samp12></td>
+																<td style="width:50%"><span style="font-size:12px">Index size:</span></td>
+																<td style="width:25%"><span style="font-size:12px" id="colSize<%out.print(colCount);%>"><% out.print(colSize); %></span></td>
 																<td style="width:25%"></td>
 															</tr>
 															<tr>
-																<td><samp12>Number of documents:</samp12></td>
-																<td><samp12 id="numdocs<%out.print(colCount);%>"><% out.print(numDocs); %></samp12></td>
+																<td><span style="font-size:12px">Number of documents:</span></td>
+																<td><span style="font-size:12px" id="numdocs<%out.print(colCount);%>"><% out.print(numDocs); %></span></td>
 																<td></td>
 															</tr>
 		<!-- 													<tr> -->
@@ -617,18 +629,18 @@
 		<!-- 														<td><button type="button" class="btn"><img src="images/eye.png" width="15px" height="15px" style="float:left" /></button></td> -->
 		<!-- 													</tr> -->
 															<tr>
-																<td><samp12>Index version:</samp12></td>
-																<td><samp12 id="colVersion<%out.print(colCount);%>"><% out.print(colVersion); %></samp12></td>
+																<td><span style="font-size:12px">Index version:</span></td>
+																<td><span style="font-size:12px" id="colVersion<%out.print(colCount);%>"><% out.print(colVersion); %></span></td>
 																<td></td>
 															</tr>
 															<tr>
 																<% String[] currentPear = new PearRequest(hostname).currentPear(colId, token); %>
-																<td><samp12>Current Pear:</samp12></td>
-																<td><samp12 id="currentPear<%out.print(colCount);%>"><% out.print(currentPear[0]); %></samp12></td>
+																<td><span style="font-size:12px">Current Pear:</span></td>
+																<td><span style="font-size:12px" id="currentPear<%out.print(colCount);%>"><% out.print(currentPear[0]); %></span></td>
 																<td></td>
 															</tr>
 															
-															<tr><td colspan="3"><button class="btn btn-default" onclick="refreshDetails('<%out.print(colCount); %>','<%out.print(colId); %>');" style="float:right"><img src="images/refresh1.png" width="16px" height="16px"></button></td></tr>		
+															<tr><td colspan="3"><button class="btn btn-default" onclick="refreshDetails('<%out.print(colCount); %>','<%out.print(colId); %>');" style="float:right"><i class="fa fa-refresh" ></i></button></td></tr>		
 											</table>
 											<div id="detailAutoRefresh<%out.print("'"+colCount+"'");%>">
 												<script type="text/javascript">
