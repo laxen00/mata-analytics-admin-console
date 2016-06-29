@@ -77,10 +77,12 @@ function getOverallState(col, colId) {
 	    {
 		  var state = parseInt(xmlhttp.responseText);
 		  if (state == 1) {
-			  document.getElementById("crawl_indicator"+col).src = "images/active1.png";
+			  document.getElementById("crawl_indicator"+col).className = "fa fa-circle";
+			  document.getElementById("crawl_indicator"+col).style.color = "green";
 		  }
 		  else {
-			  document.getElementById("crawl_indicator"+col).src = "images/noactive1.png";
+			  document.getElementById("crawl_indicator"+col).className = "fa fa-circle-o";
+			  document.getElementById("crawl_indicator"+col).style.color = "black";
 		  }
 	    }
 	  };
@@ -113,7 +115,8 @@ function startCollection(col, con, colId, unused) {
 			document.getElementById('buttonrun'+col+'_'+con).style.color = "red";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 'progress no-margin progress-striped active';
-			document.getElementById('index_indicator'+col).src = "images/active1.png";
+			document.getElementById('index_indicator'+col).className = "fa fa-circle";
+			document.getElementById('index_indicator'+col).style.color = "green";
 			document.getElementById("button"+col+"_"+con).onclick = function() {
 				run_progress_collection(col,con,'running',colId, unused);
 			};
@@ -141,7 +144,8 @@ function stopCollection(col, con, colId, unused) {
 			document.getElementById('buttonrun'+col+'_'+con).style.color = "green";
 			document.getElementById('textrun'+col+'_'+con).innerHTML = "not running";
 			document.getElementById('progress-bar-ed-info'+col+'_'+con).className = 'progress no-margin';
-			document.getElementById('index_indicator'+col).src = "images/noactive1.png";
+			document.getElementById('index_indicator'+col).className = "fa fa-circle-o";
+			document.getElementById('index_indicator'+col).style.color = "black";
 			document.getElementById('colSize'+col).src = "";
 			document.getElementById('numdocs'+col).src = "";
 			document.getElementById('colVersion'+col).src = "";
