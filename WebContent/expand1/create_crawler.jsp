@@ -400,7 +400,7 @@
 								if (prog.equalsIgnoreCase("false")) progdisplay = "inline";
 								else progdisplay = "none";
 							%>
-							<div id="_progsince" class="form-group" style="<% out.print(progdisplay); %>">
+							<div id="_progsince" class="form-group" style="display:<% out.print(progdisplay); %>">
                                 <label>Since Progresive:</label>
 								<p class="help-block"></p>
                                 <input id="progsince" name="progsince" value="<%out.print(progsince);%>" type="text" class="form-control" placeholder="date"  style="cursor:pointer;" pattern="([1|2][0-9]{3})-([0][0-9]|[1][0-2])-([0|1|2][0-9]|[3][0-1])" title="yyyy-mm-dd"></input>
