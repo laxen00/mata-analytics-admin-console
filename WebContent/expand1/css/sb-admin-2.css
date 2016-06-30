@@ -347,3 +347,8 @@ table.dataTable thead .sorting:after {
 .maxhead {
 	margin-top:-45px;
 }
+
+.maxbreadcrumb {
+	position:relative;
+	z-index:99;
+}

@@ -79,7 +79,7 @@
 	
 	<div class="wrapper">
 	<div class="page-wrapper">
-		<div class="row_ed">
+		<div class="row_ed maxbreadcrumb">
 			<ul class="breadcrumb">
 			  <li><a href="index.jsp">Home</a></li>
 			  <li class="active">Collections</li>

@@ -63,7 +63,7 @@
     <div id="wrapper">
 
         <div id="page-wrapper">
-			<div class="row">
+			<div class="row maxbreadcrumb">
 				<ul class="breadcrumb">
 					<li><a href="index.jsp">Home</a></li>
 			  		<li><a href="index.jsp#<% out.print(colId); %>">Collections - <% out.print(colId); %></a></li>

@@ -129,7 +129,7 @@
 		<input type="hidden" name="featurename" id="featurename" value="" />
 		<input type="hidden" name="annoname" id="annoname" value="" />
         <div id="page-wrapper">
-        	<div class="row">
+        	<div class="row maxbreadcrumb">
 				<ul class="breadcrumb">
 					<li><a href="index.jsp">Home</a></li>
 			  		<li><a href="index.jsp#<% out.print(colId); %>">Collections - <% out.print(colId); %></a></li>

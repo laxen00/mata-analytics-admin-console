@@ -144,7 +144,7 @@
     <div id="wrapper">
 		
         <div id="page-wrapper">
-        	<div class="row">
+        	<div class="row maxbreadcrumb">
 				<ul class="breadcrumb">
 					<li><a href="index.jsp">Home</a></li>
 			  		<li><a href="security_fields.jsp#<% out.print(alias); %>">Security</a></li>
