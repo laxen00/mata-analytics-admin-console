@@ -93,7 +93,7 @@
                 <div class="col-lg-7">
 				
                     <div class="panel-body">
-						<form id="urllist" role="form" action="">
+						<form id="urllist" role="form" action="" style="margin-bottom:10px">
 							<div class="form-group">
 							
 							<ul class="nav nav-pills">
