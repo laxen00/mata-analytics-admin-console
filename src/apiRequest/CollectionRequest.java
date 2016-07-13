@@ -230,13 +230,13 @@ public class CollectionRequest {
 		return result;
 	}
 	
-	public String[][] deleteCollection(String colId, String token) {
-		String[][] result = null;
+	public String[] deleteCollection(String colId, String token) {
+		String[] result = null;
 		try {
 			String url = PROTOCOL+hostname+ PORT + "/api/admin/collection?method=delete&collectionId="+colId+"&sessionId="+token;
 			// System.out.println(url);
 			String data = HttpProcess.getData(url);
-//			// System.out.println(data);
+			System.out.println(data);
 			InputSource is = new InputSource(new StringReader(data));
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -253,6 +253,32 @@ public class CollectionRequest {
 			    Node emptyTextNode = emptyTextNodes.item(i);
 			    emptyTextNode.getParentNode().removeChild(emptyTextNode);
 			}
+			
+			Node firstChild = doc.getFirstChild();
+			NodeList list = firstChild.getChildNodes();
+			List<String> collectionPropertyList = new ArrayList<String>();
+			String[] properties = {"value", "message"};
+			ArrayList<String[]> propertyUnsortedList = new ArrayList<String[]>();
+			ArrayList<String> unsortedList = new ArrayList<String>();
+			
+			for (int i=0;i<list.getLength();i++) {
+				unsortedList.add(list.item(i).getNodeName());
+				unsortedList.add(list.item(i).getTextContent());
+				String[] unsorted = unsortedList.toArray(new String[unsortedList.size()]);
+				propertyUnsortedList.add(unsorted);
+				unsortedList.clear();
+			}
+			
+			for (int j=0;j<properties.length;j++) {
+				for (int k=0;k<propertyUnsortedList.size();k++) {
+					if (properties[j].equals(propertyUnsortedList.get(k)[0])) {
+						collectionPropertyList.add(propertyUnsortedList.get(k)[1]);
+						break;
+					}
+				}
+			}
+			
+			result = collectionPropertyList.toArray(new String[collectionPropertyList.size()]);
 			
 		}
 		catch (Exception e) {

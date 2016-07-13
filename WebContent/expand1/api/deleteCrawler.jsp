@@ -22,7 +22,8 @@
 	String crawlerId = request.getParameter("crawlerId");
 	
 	String hostname = request.getServerName();
-	String[][] delete = new CrawlerRequest(hostname).deleteCrawler(colId, crawlerId, token);
+	String[] delete = new CrawlerRequest(hostname).deleteCrawler(colId, crawlerId, token);
+	if (!delete[0].equalsIgnoreCase("0")) session.setAttribute("bannerMessage", delete[1]);
 	String redirectURL = "../index.jsp"; 
     response.sendRedirect(redirectURL);
 %>

@@ -314,8 +314,8 @@ public class CrawlerRequest {
 		return result;
 	}
 	
-	public String[][] deleteCrawler(String colId, String crawlerId, String token) {
-		String[][] result = null;
+	public String[] deleteCrawler(String colId, String crawlerId, String token) {
+		String[] result = null;
 		try {
 			String url = PROTOCOL+hostname+ PORT + "/api/admin/crawler?method=delete&collectionId="+colId+"&crawlerId="+crawlerId+"&sessionId="+token;
 			// System.out.println(url);
@@ -337,6 +337,32 @@ public class CrawlerRequest {
 			    Node emptyTextNode = emptyTextNodes.item(i);
 			    emptyTextNode.getParentNode().removeChild(emptyTextNode);
 			}
+			
+			Node firstChild = doc.getFirstChild();
+			NodeList list = firstChild.getChildNodes();
+			List<String> crawlerPropertyList = new ArrayList<String>();
+			String[] properties = {"value", "message"};
+			ArrayList<String[]> propertyUnsortedList = new ArrayList<String[]>();
+			ArrayList<String> unsortedList = new ArrayList<String>();
+			
+			for (int i=0;i<list.getLength();i++) {
+				unsortedList.add(list.item(i).getNodeName());
+				unsortedList.add(list.item(i).getTextContent());
+				String[] unsorted = unsortedList.toArray(new String[unsortedList.size()]);
+				propertyUnsortedList.add(unsorted);
+				unsortedList.clear();
+			}
+			
+			for (int j=0;j<properties.length;j++) {
+				for (int k=0;k<propertyUnsortedList.size();k++) {
+					if (properties[j].equals(propertyUnsortedList.get(k)[0])) {
+						crawlerPropertyList.add(propertyUnsortedList.get(k)[1]);
+						break;
+					}
+				}
+			}
+			
+			result = crawlerPropertyList.toArray(new String[crawlerPropertyList.size()]);
 			
 		}
 		catch (Exception e) {

@@ -32,7 +32,7 @@
 	String hostname = request.getServerName();
 	String[] create = new CollectionRequest(hostname).createV2Collection(args, token);
 	
-	if (!create[0].equalsIgnoreCase("0")) session.setAttribute("createMessage", create[1]);
+	if (!create[0].equalsIgnoreCase("0")) session.setAttribute("bannerMessage", create[1]);
 	
 	String redirectURL = "../index.jsp";
 	response.sendRedirect(redirectURL);

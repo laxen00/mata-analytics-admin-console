@@ -21,7 +21,8 @@
 	String colId = request.getParameter("colId");
 	
 	String hostname = request.getServerName();
-	String[][] delete = new CollectionRequest(hostname).deleteCollection(colId, token);
+	String[] delete = new CollectionRequest(hostname).deleteCollection(colId, token);
+	if (!delete[0].equalsIgnoreCase("0")) session.setAttribute("bannerMessage", delete[1]);
 	String redirectURL = "../index.jsp";
     response.sendRedirect(redirectURL);
 %>

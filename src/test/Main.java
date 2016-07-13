@@ -11,20 +11,18 @@ public class Main {
 		
 		String hostname = "max.mataprima.com";
 		String token = TesterLogin.login(hostname);
-		String colId = "apalah";
+		String colId = "SahabatSampoerna";
 		String username = "administrator";
-		String crawlerId = "WEB_78623";
-//		String[] a = new CrawlerRequest(hostname).getListTemplate("forum", token);
-		String[] a = new CrawlerRequest(hostname).getCrawler(colId, crawlerId, token);
-//		String bodeh = "{\"collectionId\":\"apalah\"}";
-//		String[] a = new CollectionRequest(hostname).createV2Collection(bodeh, token);
-//		String[] a = new CrawlerRequest(hostname).getTemplate("kaskus.co.id", token);
+		String crawlerId = "WEB_13854";
+//		String[] out = new CrawlerRequest(hostname).getListTemplate("forum", token);
+		String[] out = new CrawlerRequest(hostname).getCrawler(colId, crawlerId, token);
+//		String[] out = new CollectionRequest(hostname).deleteCollection(colId, token);
+//		String[] out = new CrawlerRequest(hostname).getTemplate("kaskus.co.id", token);
 		int counter = 0;
-		for (String line : a) {
+		for (String line : out) {
 			System.out.println(counter + "\t:\t"+ line);
 			counter++;
 		}
-		
 	}
-
+	
 }

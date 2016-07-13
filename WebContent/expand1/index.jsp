@@ -60,19 +60,19 @@
 </head>
 <body>
 	<%
-		String createMessage = "";
+		String bannerMessage = "";
 		String displayMessage = "none";
 		
 		try {
-			createMessage = session.getAttribute("createMessage").toString();
+			bannerMessage = session.getAttribute("bannerMessage").toString();
 		}
 		catch (Exception e) {
-			createMessage = "";
+			bannerMessage = "";
 		}
 		
-		if (!createMessage.isEmpty()) { 
+		if (!bannerMessage.isEmpty()) { 
 			displayMessage="block"; 
-			session.removeAttribute("createMessage"); 
+			session.removeAttribute("bannerMessage"); 
 		}
 	%>
 	
@@ -90,7 +90,7 @@
 				<h1 class="page-header">Collections</h1>
 				<div class="alert alert-danger alert-dismissable" style="display:<%out.print(displayMessage);%>">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<% out.print(createMessage); %>
+					<% out.print(bannerMessage); %>
 				</div>
 			</div>
 		</div>
@@ -116,7 +116,7 @@
 				%>
 				<div id="<% out.print(colId); %>" class="container_ex">
 					<div class="panel-heading" style="background-color:#e6e6e6;" >
-						<table style="width:100%">1234
+						<table style="width:100%">
 							<tr>
 								<td style="width:99%">
 									<div style="cursor:pointer" class="panel_ed-heading" onclick="colexpand(<% out.print("'"+colId+"'"); %>)">

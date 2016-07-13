@@ -575,6 +575,7 @@ function refreshPear(colId, pearAutoRefresh) {
 }
 
 function run_progress_crawler(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 	
@@ -619,9 +620,11 @@ function run_progress_crawler(col,con,state,colId,crawlId) {
 		};
 		progressBar.css('width', '50%');
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_rebuilder(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 
@@ -688,9 +691,11 @@ function run_progress_rebuilder(col,con,state,colId,crawlId) {
 		};
 		progressBar.css('width',  '0%');
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_reloader(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 	
@@ -720,9 +725,11 @@ function run_progress_reloader(col,con,state,colId,crawlId) {
 	}else if(state == "running"){
 		
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_collection(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
 	refreshSession();
 	if (state == "not running") {
 		document.getElementById("button"+col+"_"+con).onclick = function() {
@@ -761,4 +768,5 @@ function run_progress_collection(col,con,state,colId,crawlId) {
 			refreshParse(col,con,colId,"");
 		}, 200 + offsetRandom);
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
