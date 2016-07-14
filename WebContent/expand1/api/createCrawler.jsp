@@ -269,6 +269,8 @@
 	}
 	
 	//escaping json properties
+	query = StringEscapeUtils.escapeJson(query);
+	keyword = StringEscapeUtils.escapeJson(keyword);
 	header_input = StringEscapeUtils.escapeJson(header_input);
 	user_input = StringEscapeUtils.escapeJson(user_input);
 	postid_input = StringEscapeUtils.escapeJson(postid_input);
@@ -468,7 +470,7 @@
 		    Thread.currentThread().interrupt();
 		}
 	}
-	
+
 	if (!create[0].equalsIgnoreCase("0")) session.setAttribute("bannerMessage", create[1]);
 	
 	String redirectURL = "../index.jsp";
