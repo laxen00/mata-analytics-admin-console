@@ -313,11 +313,11 @@ String[][] apptokens = new SecurityRequest(hostname).getTokens(session.getAttrib
                                 <input id="crawlername" name="crawlername" type="text" class="form-control" placeholder="Crawler name" value="<% out.print(displayname); %>" required></input>
                             </div>
 							<% if (type.equalsIgnoreCase("general") || type.equalsIgnoreCase("news") || type.equalsIgnoreCase("forum")) { %>
-							<div class="form-group">
+							<div class="form-group" style="display:none">
 							<label>Depth Link:</label>
 							 <input id="depthlink" name="depthlink" type="text" class="form-control" placeholder="Depth Link" value="<% out.print(depthlink); %>" required></input>
 							</div>
-							<div class="form-group">
+							<div class="form-group" style="display:none">
 							<label>Thread:</label>
 							 <input id="thread" name="thread" type="text" class="form-control" placeholder="Thread" value="<% out.print(thread); %>" required></input>
 							</div>

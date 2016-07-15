@@ -575,6 +575,10 @@ function refreshPear(colId, pearAutoRefresh) {
 }
 
 function run_progress_crawler(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
+
+	document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-spinner fa-spin";
+	document.getElementById('buttonrun'+col+'_'+con).color.style = "black";
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 	
