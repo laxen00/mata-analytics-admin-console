@@ -623,6 +623,7 @@ function run_progress_crawler(col,con,state,colId,crawlId) {
 		};
 		progressBar.css('width', '50%');
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_rebuilder(col,con,state,colId,crawlId) {
