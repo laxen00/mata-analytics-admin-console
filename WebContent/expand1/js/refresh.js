@@ -39,7 +39,7 @@ function refreshParse(col, con, colId, unused) {
 				document.getElementById('index_indicator'+col).src = "images/noactive1.png";
 				document.getElementById('colSize'+col).src = "";
 				document.getElementById('numdocs'+col).src = "";
-				document.getElementById('colVersion'+col).src = "";
+				document.getElementById('colVersion2'+col).src = "";
 		  }else if (stat == 1) {
 			  	progressBar.css('width',  '100%');
 			  	document.getElementById("button"+col+"_"+con).onclick = function() {
@@ -627,6 +627,10 @@ function run_progress_crawler(col,con,state,colId,crawlId) {
 }
 
 function run_progress_rebuilder(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
+
+	document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-spinner fa-spin";
+	document.getElementById('buttonrun'+col+'_'+con).style.color = "black";
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 
@@ -693,9 +697,14 @@ function run_progress_rebuilder(col,con,state,colId,crawlId) {
 		};
 		progressBar.css('width',  '0%');
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_reloader(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
+
+	document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-spinner fa-spin";
+	document.getElementById('buttonrun'+col+'_'+con).style.color = "black";
 	refreshSession();
 	var progressBar = $('#progress-bar-ed'+col+'_'+con);
 	
@@ -725,9 +734,14 @@ function run_progress_reloader(col,con,state,colId,crawlId) {
 	}else if(state == "running"){
 		
 	}
+	document.getElementById("button"+col+"_"+con).disabled = false;
 }
 
 function run_progress_collection(col,con,state,colId,crawlId) {
+	document.getElementById("button"+col+"_"+con).disabled = true;
+
+	document.getElementById('buttonrun'+col+'_'+con).className = "fa fa-spinner fa-spin";
+	document.getElementById('buttonrun'+col+'_'+con).style.color = "black";
 	refreshSession();
 	if (state == "not running") {
 		document.getElementById("button"+col+"_"+con).onclick = function() {
@@ -765,5 +779,6 @@ function run_progress_collection(col,con,state,colId,crawlId) {
 			//console.debug("refresh indexer --> colId:" + colId);
 			refreshParse(col,con,colId,"");
 		}, 200 + offsetRandom);
+		document.getElementById("button"+col+"_"+con).disabled = false;
 	}
 }
