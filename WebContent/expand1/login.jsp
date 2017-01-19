@@ -34,7 +34,16 @@
 			return true;
 		}
 	</script>
-
+	<style>
+		.logologin {
+				margin-top:5%;
+			}
+		@media screen and (max-width: 990px) {
+			.logologin {
+				margin-top:-5%;
+			}
+		}
+	</style>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.css" rel="stylesheet">
 
@@ -63,9 +72,9 @@
 	<!-- new  -->
 		<div class="container">
         <div class="row">
-		<div class="col-lg-8 col-lg-offset-2 fade-in one" style="background: rgba(100,100,100,0.05); box-shadow: 2px 2px 10px #333333; margin-top:180px; padding:50px 0 50px 0">
+		<div class="col-lg-8 col-xs-10 col-xs-offset-1 col-lg-offset-2 fade-in one" style="background: rgba(100,100,100,0.05); box-shadow: 2px 2px 10px #333333; margin-top:12%; padding:50px 0 50px 0">
             <div class="row">
-			<div class="col-md-4 col-md-offset-1">
+			<div class="col-md-4 col-md-offset-1 logologin">
 			<img src="images/mata_analytics_816w.png" width="350px" style="margin:0px 30px 0 -35px">
 			</div>
 			<div class="col-md-4 col-md-offset-2 ">
@@ -100,6 +109,11 @@
 								<div class="row">
 								<div class="col-md-4"><button type="submit" class="btn btn-default" value="Login">Login</button></div>
                                 
+								</div>
+								<div class="row" style="margin-top:5%; margin-bottom:-5%">
+									<div class="col-md-12">
+										<span style="">Don't have account yet? Register <a href="http://mataprima.com/#ask-page" target="_blank" style="font-weight:bold; color: #2f2f2f">here</a><br>Or try the <a href="http://max.mataprima.com/analytics/?sessionId=37m23um98gv8d1hgm18wn5pmol" target="_blank" style="font-weight:bold; color: #2f2f2f">demo</a></span>
+									</div>
 								</div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 

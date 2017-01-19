@@ -65,7 +65,7 @@
     <![endif]-->
 </head>
 
-<body style="overflow: hidden">
+<body >
     <div id="wrapper">
 
         <!-- Navigation -->
@@ -150,8 +150,8 @@
             <!-- /.navbar-static-side -->
         </nav>
 
-        <div id="page-wrapper">
-            <iframe src="<%out.print(framesrc); %>" frameborder="0" id="iframe_a" name="iframe_a" style="overflow: hidden; height: 88%; width: 100%; position: absolute;" ></iframe>
+        <div id="page-wrapper" style="min-height:auto !important">
+            <iframe src="<%out.print(framesrc); %>" frameborder="0" id="iframe_a" name="iframe_a" style="overflow: hidden; height: 89%; width: 100%; position: absolute;" ></iframe>
         </div>
         <!-- /#page-wrapper -->
         <div id="aboutModal" class="modal fade" role="dialog">
@@ -171,9 +171,9 @@
 									<img src="images/mata_analytics_150w.png">
 								</th>
 								<th style="padding-left:10px">
-									<h5><b>Mata Analytics Dashboard v1.5</b><br/>
+									<h5><b>Mata Analytics Dashboard v1.6</b><br/>
 										Bahasa Indonesia Language Pack / BILP v1.0.0.14<br/>
-										Banana v1.5.0
+										Banana v1.6.12
 									</h5>
 								</th>
 							</tr>
@@ -194,7 +194,7 @@
 					</p>
 					
 					<p style="text-align: justify">
-						Copyright &copy; 2016 </br> PT. Mata Prima Universal.
+						Copyright &copy; 2016-2017 </br> PT. Mata Prima Universal.
 					</p>
 					
 					
@@ -216,7 +216,7 @@ background: -ms-linear-gradient(top,  #45484d 0%,#000000 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #45484d 0%,#000000 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#45484d', endColorstr='#000000',GradientType=0 ); /* IE6-9 */ border-top: 2px solid #286CD1; ">
 		
-			<a href="http://www.mataprima.com" style="margin:5px 5px 0 0; font-size:12px;float:right; color:#e5e5e5" target="_blank">Copyright &copy; 2016 PT. Mata Prima Universal</a>
+			<a href="http://www.mataprima.com" style="margin:5px 5px 0 0; font-size:12px;float:right; color:#e5e5e5" target="_blank">Copyright &copy; 2016-2017 PT. Mata Prima Universal</a>
 		</div>
 	</footer>
     </div>
