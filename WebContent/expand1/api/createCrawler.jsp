@@ -63,6 +63,8 @@
 	String vst = "";
 	String vkcf = "";
 	String count = "";
+	String usaf = "";
+	String searchtype = "";
 	
 	try {
 		prog = request.getParameter("prog");
@@ -263,6 +265,22 @@
 		count = "";
 	}
 	
+	try {
+		usaf = request.getParameter("usaf");
+		if (usaf.equalsIgnoreCase("null")) usaf = "";
+	}
+	catch (Exception e) {
+		usaf = "";
+	}
+	
+	try {
+		searchtype = request.getParameter("searchtype");
+		if (searchtype.equalsIgnoreCase("null")) searchtype = "";
+	}
+	catch (Exception e) {
+		searchtype = "";
+	}
+	
 	//modifying progressive
 	if (!progsince.equalsIgnoreCase("")) {
 		prog = progsince;
@@ -385,6 +403,21 @@
 		// System.out.println();
 		create = new CrawlerRequest(hostname).createCrawler(colId, args, token);
 	}
+	
+	if (type.equalsIgnoreCase("instagram")) {
+			
+			String openarg = "{";
+			String delay = "120";
+			String argproperties ="\"displayname\":\""+displayname+"\",\"type\":\""+type+"\",\"delaybetweenrequest\":\""+delay+"\",\"search\":\""+query+"\",\"progressive\":\""+prog+"\",\"usesearchasfilter\":\""+usaf+"\",\"searchtype\":\""+searchtype+"\"";
+		// 	if (!dateuntil.equals("")) argproperties = argproperties + ",\"until\":\""+dateuntil+"\"";
+			String closearg = "}";
+			String args = openarg + argproperties + closearg;
+			// System.out.println();
+			// System.out.println(args);
+		//		out.println(args);
+			// System.out.println();
+			create = new CrawlerRequest(hostname).createCrawler(colId, args, token);
+		}
 	
 	if (type.equalsIgnoreCase("news")) {
 		
