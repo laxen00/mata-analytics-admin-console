@@ -402,7 +402,7 @@ public class CrawlerRequest {
 		// System.out.println(args);
 		try {
 			String data = HttpProcess.httpPostWithBody(url, args);
-			// System.out.println(data);
+			 System.out.println(data);
 			InputSource is = new InputSource(new StringReader(data));
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
