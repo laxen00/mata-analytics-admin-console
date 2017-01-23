@@ -142,7 +142,8 @@
 			var choice5 = "forum";
 			var choice6 = "twitter_bluemix";
 			var choice7 = "youtube";
-	
+			var choice7 = "Instagram";
+			
 			var apptoken = getAppToken();
 			if (val == choice1) {
 				var fieldStart = '<div class="form-group"><span>* </span><label>App Token</label><select name="apptoken" id="apptoken" class="form-control" style="margin-bottom:15px" required>';
@@ -208,6 +209,16 @@
 					if (apptoken[i].type == 'youtube') options +=  '<option value="'+apptoken[i].token+'">'+apptoken[i].alias+'</option>';
 				}
 				var fieldClose = '</select></div><div class="form-group"><label>Video Search Type:</label><select name="vst" id="vst" class="form-control"><option value="relevance">Relevance</option><option value="date">Date</option></select></div><div class="form-group"><span>* </span><label>Keyword</label><input name="keyword" id="keyword" type="text" class="form-control" placeholder="Query" required></input></div><div class="form-group"><label>Progressive:</label><p class="help-block"></p><select id="prog" name="prog" class="form-control" onchange="javascript:progs(this)"><option value="true">True</option><option value="false">False</option></select></div><div id="_progsince" class="form-group" style="display:none"><label>Since Progresive:</label><p class="help-block"></p><input id="progsince" name="progsince" type="text" class="form-control" placeholder="date" style="cursor:pointer;" pattern="([1|2][0-9]{3})-([0][0-9]|[1][0-2])-([0|1|2][0-9]|[3][0-1])" title="yyyy-mm-dd"></input></div><div class="form-group"><label>Video Keywords Comments Filter</label><select id="vkcf" name="vkcf" class="form-control"><option value="true">True</option><option value="false">False</option></select></div>';
+				var fields = fieldStart + options + fieldClose;
+				document.getElementById('change_ed').innerHTML = fields;
+				datepick();
+				document.getElementById('crawlerform').action ='api/createCrawler.jsp';
+				document.getElementById('nextbutton').className ='btn btn-default disabled';
+				document.getElementById('finishbutton').className ='btn btn-default';
+		    }else if (val == choice8) {
+				var fieldStart = '<div class="form-group"><span>* </span><label>Keyword</label><input name="query" id="query" type="text" class="form-control" placeholder="Query" required>';
+				
+				var fieldClose = '</input></div><div class="form-group"><label>Progressive:</label><p class="help-block"></p><select id="prog" name="prog" class="form-control" onchange="javascript:progs(this)"><option value="true">True</option><option value="false">False</option></select></div><div id="_progsince" class="form-group" style="display:none"><label>Since Progresive:</label><p class="help-block"></p><input id="progsince" name="progsince" type="text" class="form-control" placeholder="date" style="cursor:pointer;" pattern="([1|2][0-9]{3})-([0][0-9]|[1][0-2])-([0|1|2][0-9]|[3][0-1])" title="yyyy-mm-dd"></input></div><div class="form-group"><label>Use Keyword As Filter</label><select id="usaf" name="usaf" class="form-control"><option value="true">True</option><option value="false">False</option></select></div><div class="form-group"><label>Search Type:</label><select name="searchtype" id="searchtype" class="form-control"><option value="user">User</option><option value="tag">Tag</option></select></div>';
 				var fields = fieldStart + options + fieldClose;
 				document.getElementById('change_ed').innerHTML = fields;
 				datepick();
