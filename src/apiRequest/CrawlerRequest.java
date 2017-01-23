@@ -399,10 +399,10 @@ public class CrawlerRequest {
 		String[] result = null;
 		String url = PROTOCOL+hostname+ PORT + "/api/admin/crawler?method=create&collectionId="+colId+"&sessionId="+token;
 		// System.out.println(url);
-		// System.out.println(args);
+		 System.out.println(args);
 		try {
 			String data = HttpProcess.httpPostWithBody(url, args);
-			// System.out.println(data);
+			 System.out.println(data);
 			InputSource is = new InputSource(new StringReader(data));
 			DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
 			DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
