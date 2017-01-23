@@ -366,6 +366,10 @@
                                     <label>
                                         <input type="radio" onclick="opttype(this)" name="optionsRadios" id="optionsRadios6" value="youtube" <% if (type.equalsIgnoreCase("youtube")) out.print("checked"); %>>Youtube
                                     </label>
+                                    <div class="radio">
+                                    <label>
+                                        <input type="radio" onclick="opttype(this)" name="optionsRadios" id="optionsRadios7" value="youtube" <% if (type.equalsIgnoreCase("instagram")) out.print("checked"); %>>Instagram
+                                    </label>
 								
                                 
 								</div>
