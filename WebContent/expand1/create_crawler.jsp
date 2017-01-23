@@ -142,7 +142,7 @@
 			var choice5 = "forum";
 			var choice6 = "twitter_bluemix";
 			var choice7 = "youtube";
-			var choice7 = "Instagram";
+			var choice7 = "instagram";
 			
 			var apptoken = getAppToken();
 			if (val == choice1) {
