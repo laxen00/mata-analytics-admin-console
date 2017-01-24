@@ -305,10 +305,10 @@
 	
 	// System.out.println();
 	// System.out.println("colId:" + colId);
-	// System.out.println("displayname:" + displayname);
+// 	System.out.println("displayname:" + displayname);
 	// System.out.println("useragent:" + useragent);
 	// System.out.println("url:" + url);
-	// System.out.println("type:" + type);
+// 	System.out.println("type:" + type);
 	// System.out.println("keyword:" + keyword);
 	// System.out.println("apptoken:" + apptoken);
 	// System.out.println("header_input:" + header_input);
@@ -413,7 +413,7 @@
 			String closearg = "}";
 			String args = openarg + argproperties + closearg;
 			// System.out.println();
-			// System.out.println(args);
+// 			System.out.println(args);
 		//		out.println(args);
 			// System.out.println();
 			create = new CrawlerRequest(hostname).createCrawler(colId, args, token);
