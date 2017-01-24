@@ -277,6 +277,7 @@
 																if (type.equalsIgnoreCase("news")) icon = "fa fa-list-alt"; 
 																if (type.equalsIgnoreCase("forum")) icon = "fa fa-group"; 
 																if (type.equalsIgnoreCase("youtube")) icon = "fa fa-youtube-square";
+																if (type.equalsIgnoreCase("instagram")) icon = "fa fa-instagram";
 														%>
 														<div id="crawlId<%out.print(colCount+"_"+crawlCount); %>" style="display: none;"><%out.print(crawlerId); %></div>
 														<table>
