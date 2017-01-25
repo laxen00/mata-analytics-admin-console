@@ -205,29 +205,14 @@
 					</div>
 					<div id="content_ed_<% out.print(colId); %>" class="content">
 						<div class="panel-body">
-							<table>
-								<tr>
-									<td>
+							<div class="row">
+								<div class="col-lg-4 col-xs-12">
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
 													<td colspan="3"><span>Crawl</span></td>
 												</tr>
-		<!-- 										<tr> -->
-		<!-- 										<td style="width:70%"> -->
-		<%-- 											<div id="progress-bar-ed-info<%out.print(colCount); %>_1" class="progress no-margin"> --%>
-		<%-- 											<div id="progress-bar-ed<%out.print(colCount); %>_1" class=" bar_ed progress-bar progress-bar-info" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" > --%>
-		<!-- 												<span class="sr-only">0% Complete</span> -->
-		<!-- 											</div> -->
-		<!-- 											</div> -->
-		<!-- 										</td> -->
-		<!-- 										<td style="width:10%"> -->
-		<%-- 											<button type="button" id="button<%out.print(colCount); %>_1" class="btn btn-default" onclick="run_prog_all(<% out.print(colCount); %>,1,<% out.print("\'"+crawlerOverallState+"\'"); %>,<%out.print("\'"+colId+"\'"); %>, <% out.print(crawlerList.length);%>)"><img id="<% out.print("buttonrun"+colCount+"_1"); %>" src=<% out.print(crawlerOverallImgsrc); %> width="15px" height="15px" /></button> --%>
-		<!-- 										</td> -->
-		<!-- 										<td style="width:20%"> -->
-		<%-- 											<dfn id="<% out.print("textrun"+colCount+"_1"); %>"><% out.print(crawlerOverallState); %></dfn> --%>
-		<!-- 										</td> -->
-		<!-- 										</tr> -->
+		
 											</table>
 											<hr>
 											
@@ -407,8 +392,8 @@
 												
 											</div>
 										</div>
-									</td>
-									<td >
+								</div>
+								<div class="col-lg-4 col-xs-12">	
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
@@ -577,8 +562,8 @@
 															<td style="width:15%">
 																<dfn12 id="<%out.print("textrun"+colCount+"_4");%>">not running</dfn12>
 															</td>
-															<td>
-															</td style="width:10%">
+															<td style="width:10%">
+															</td>
 															</tr>
 															
 															
@@ -604,8 +589,8 @@
 												</script>
 											</div>
 										</div>
-									</td>
-									<td >
+								</div>
+								<div class="col-lg-4 col-xs-12">	
 										<div class="panel panel-default_ed">
 											<table>
 												<tr>
@@ -660,9 +645,8 @@
 												</script>
 											</div>
 										</div>
-									</td>
-								</tr>
-							</table>
+								</div>
+							</div>		
 						</div>
 					</div>
 				</div>

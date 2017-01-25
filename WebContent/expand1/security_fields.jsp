@@ -74,9 +74,8 @@
 				
 					<div id="content_ed_<%out.print(tokens[i][2]); %>" class="content">
 						<div class="panel-body">
-							<table>
-								<tr>
-									<td>
+							<div class="row">
+								<div class="col-lg-12 col-xs-12">
 										<div class="panel panel-default_ed" style="min-height:0px; height:inherit">
 											<table>
 												<tr>
@@ -97,9 +96,8 @@
 												</tr>										
 											</table>
 										</div>
-									</td>
-								</tr>
-							</table>
+								</div>
+							</div>		
 						</div>
 					</div>
 				</div>
