@@ -38,6 +38,11 @@
 	<link href="css/style.css" rel="stylesheet" type="text/css" >
 	<link href="css/sb-admin-2.css" rel="stylesheet">
 	<link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<style>
+		.wrap_ed {
+			overflow-wrap: break-word;
+		}
+	</style>
 </head>
 <body>	
 	<div class="wrapper">
@@ -76,8 +81,8 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-lg-12 col-xs-12">
-										<div class="panel panel-default_ed" style="min-height:0px; height:inherit">
-											<div class="row">
+										<div class="panel panel-default_ed wrap_ed" style="min-height:0px; height:inherit">
+											
 												<div class="row">	
 													<div class="col-lg-4 col-xs-4">Type :</div>
 													<div class="col-lg-8 col-xs-8" id="type<%out.print(i+1);%>"><%out.print(tokens[i][0]);%></div>
@@ -90,7 +95,7 @@
 													<div class="col-lg-4 col-xs-4">App ID :</div>
 													<div class="col-lg-8 col-xs-8" id="keyid<%out.print(i+1);%>"><%out.print(tokens[i][3]);%></div>
 												</div>
-												</div class="row">
+												<div class="row">
 													<div class="col-lg-4 col-xs-4">App Secret :</div>
 													<div class="col-lg-8 col-xs-8" id="secret<%out.print(i+1);%>"><%out.print(tokens[i][4]);%></div>
 												</div>
