@@ -77,24 +77,23 @@
 							<div class="row">
 								<div class="col-lg-12 col-xs-12">
 										<div class="panel panel-default_ed" style="min-height:0px; height:inherit">
-											<table>
-												<tr>
-													<td style="width:30%">Type :</td>
-													<td style="width:70%; color:blue" id="type<%out.print(i+1);%>"><%out.print(tokens[i][0]);%></td>
-												</tr>	
-												<tr>
-													<td style="width:30%">Token :</td>
-													<td style="width:70%" id="token<%out.print(i+1);%>"><%out.print(tokens[i][1]);%></td>
-												</tr>
-												<tr>
-													<td style="width:30%">App ID :</td>
-													<td style="width:70%" id="keyid<%out.print(i+1);%>"><%out.print(tokens[i][3]);%></td>
-												</tr>
-												<tr>
-													<td style="width:30%">App Secret :</td>
-													<td style="width:70%" id="secret<%out.print(i+1);%>"><%out.print(tokens[i][4]);%></td>
-												</tr>										
-											</table>
+											<div class="row">
+												<div class="row">	
+													<div class="col-lg-4 col-xs-4">Type :</div>
+													<div class="col-lg-8 col-xs-8" id="type<%out.print(i+1);%>"><%out.print(tokens[i][0]);%></div>
+												</div>
+												<div class="row">
+													<div class="col-lg-4 col-xs-4">Token :</div>
+													<div class="col-lg-8 col-xs-8" id="token<%out.print(i+1);%>"><%out.print(tokens[i][1]);%></div>
+												</div>
+												<div class="row">
+													<div class="col-lg-4 col-xs-4">App ID :</div>
+													<div class="col-lg-8 col-xs-8" id="keyid<%out.print(i+1);%>"><%out.print(tokens[i][3]);%></div>
+												</div>
+												</div class="row">
+													<div class="col-lg-4 col-xs-4">App Secret :</div>
+													<div class="col-lg-8 col-xs-8" id="secret<%out.print(i+1);%>"><%out.print(tokens[i][4]);%></div>
+												</div>
 										</div>
 								</div>
 							</div>		
